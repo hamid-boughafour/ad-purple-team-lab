@@ -15,7 +15,7 @@ Un dominio de Active Directory, atacado con las mismas herramientas que usa un r
 
 | Componente | Herramienta |
 |---|---|
-| Dominio objetivo | Active Directory (Windows Server) |
+| Dominio objetivo | Active Directory (Windows Server) — `crisol.lab` |
 | Framework de C2 | Sliver |
 | Mapeo del dominio | BloodHound |
 | Detección | Wazuh (reutilizado) |
@@ -23,12 +23,23 @@ Un dominio de Active Directory, atacado con las mismas herramientas que usa un r
 | Marco de referencia | MITRE ATT&CK |
 | Hipervisor | VMware Workstation |
 
+## Máquinas del laboratorio
+
+| Máquina | IP | Rol | Estado |
+|---|---|---|---|
+| `dc01` | 192.168.100.40 | Controlador de dominio (`crisol.lab`) | Activo |
+| `ws01` | 192.168.100.50 | Estación de trabajo del dominio | Pendiente |
+| `wazuh-server` | 192.168.100.10 | SIEM (reutilizado) | Activo |
+| `atacante` | 192.168.100.30 | Máquina de ataque (reutilizada) | Activo |
+
+Todas en la red aislada `VMnet10` (192.168.100.0/24), sin salida a internet salvo conexión temporal y puntual cuando hace falta.
+
 ## Fases del proyecto
 
 | Fase | Contenido | Estado |
 |---|---|---|
-| Fase 0 | Repositorio y estructura | En curso |
-| Fase 1 | Dominio AD objetivo (DC01 + estación de trabajo) | Pendiente |
+| Fase 0 | Repositorio y estructura | Completado |
+| Fase 1 | Dominio AD objetivo (DC01 + estación de trabajo) | En curso — DC01 creado, promovido a controlador de dominio y enrolado como agente de Wazuh; falta WS01 |
 | Fase 2 | Acceso inicial y C2 con Sliver | Pendiente |
 | Fase 3 | Reconocimiento del dominio con BloodHound | Pendiente |
 | Fase 4 | Escalada: Kerberoasting → DCSync | Pendiente |
