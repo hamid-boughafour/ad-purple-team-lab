@@ -40,7 +40,7 @@ Todas en la red aislada `VMnet10` (192.168.100.0/24), sin salida a internet salv
 |---|---|---|
 | Fase 0 | Repositorio y estructura | Completado |
 | Fase 1 | Dominio AD objetivo (DC01 + estación de trabajo) | Completado |
-| Fase 2 | Acceso inicial y C2 con Sliver | Pendiente |
+| Fase 2 | Acceso inicial y C2 con Sliver | En curso — implante ejecutado en WS01, primer hallazgo documentado ([IR-001](reports/IR-001-ejecucion-implante-sliver.md)) |
 | Fase 3 | Reconocimiento del dominio con BloodHound | Pendiente |
 | Fase 4 | Escalada: Kerberoasting → DCSync | Pendiente |
 | Fase 5 | Validación purple team contra Wazuh | Pendiente |
